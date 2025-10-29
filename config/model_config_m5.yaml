@@ -1,0 +1,29 @@
+# ---------------------------------------------------------
+# Configuration for TFT-Lite M5 Sales Forecasting
+# (Adapted from Kaggle TFT-Lite Notebook)
+# ---------------------------------------------------------
+
+MODEL_PARAMS:
+  # --- Architecture (from notebook Cell 7) ---
+  d_model: 128
+  nhead: 4
+  dim_feedforward: 256
+  num_encoder_layers: 2
+  num_decoder_layers: 1 # Notebook used 1 decoder block
+  dropout: 0.1
+
+FEATURE_PARAMS:
+  # --- Sequence Lengths (from notebook Cell 6) ---
+  ENC_LEN: 56       # Encoder length (past history)
+  PRED_DAYS: 28     # Forecast horizon (how far to predict)
+
+TRAIN_PARAMS:
+  # --- Training (from notebook Cell 7) ---
+  BATCH_SIZE: 128
+  LEARNING_RATE: 0.002 # 2e-3 in notebook
+  EPOCHS: 100
+  EARLY_STOPPING_PATIENCE: 5
+
+# --- Paths ---
+SEED: 42
+CHECKPOINT_PATH: model_paths/m5_tft_lite.ckpt # Use .ckpt for PyTorch Lightning

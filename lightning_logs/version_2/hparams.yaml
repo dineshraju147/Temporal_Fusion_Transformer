@@ -1,0 +1,17 @@
+d_model: 128
+dim_ff: 256
+enc_len: 56
+lr: 0.002
+n_cat_maps:
+- 7
+- 12
+- 31
+- 1
+- 1
+- 1
+n_cont: 6
+nhead: 4
+num_dec_layers: 1
+num_enc_layers: 2
+p: 0.1
+pred_days: 28

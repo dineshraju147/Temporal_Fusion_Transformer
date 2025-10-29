@@ -1,0 +1,31 @@
+# ---------------------------------------------------------
+# Configuration for M5 Daily Forecasting Pipeline
+# (Adapted from Kaggle TFT-Lite Notebook)
+# ---------------------------------------------------------
+
+dataset:
+  # --- Paths to RAW M5 files ---
+  sales_path: 'data/sales_train_validation.csv'
+  prices_path: 'data/sell_prices.csv'
+  calendar_path: 'data/calendar.csv'
+
+  # --- Aggregation Config (MUST BE 1) ---
+  # 1 = daily data (matches notebook)
+  aggregation_days: 1
+  validate_quality: True
+  
+  # --- Validation Split ---
+  # Use last 20% of time for validation
+  val_split_pct: 0.2
+
+  # --- Sampling Config ---
+  # Set to a number (e.g., 100) for fast testing
+  # Set to 'null' to load all 30,000+ items.
+  sample_items: 1 # Use 100 for a quick test, then increase/set to null
+
+training:
+  seed: 42
+
+output:
+  model_output_dir: model_paths/
+  predictions_dir: predictions_m5/
